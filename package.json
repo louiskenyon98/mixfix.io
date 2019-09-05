@@ -4,7 +4,7 @@
   "description": "React bootstrap project w/ babel and webpack",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --watch",
+    "start": "concurrently \"webpack --mode development --open --watch\" \"node server/index.js\"",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -43,6 +43,10 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "concurrently": "^4.1.2",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.2",
+    "path": "^0.12.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "url-loader": "^2.0.1",
