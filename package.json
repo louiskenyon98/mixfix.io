@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development --open --watch",
-    "start": "concurrently \"webpack --mode development --open --watch\" \"node server/index.js\"",
+    "start": "concurrently \"webpack --mode development --open --watch\" \"nodemon --inspect server/index.js\"",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
