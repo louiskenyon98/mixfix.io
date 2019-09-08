@@ -4,6 +4,7 @@
   "description": "App to lookup a user's playlists and then pull metadata from the songs in those playlists.",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack-dev-server --mode development --open --watch",
     "start": "concurrently \"webpack --mode development --open --watch\" \"node server/index.js\"",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -53,6 +54,7 @@
     "querystring": "^0.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
     "request": "^2.88.0",
     "url-loader": "^2.0.1",
     "uuid": "^3.3.2",

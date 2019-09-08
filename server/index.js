@@ -7,6 +7,7 @@ const cors = require('cors');
 const querystring = require('querystring');
 const cookieParser = require('cookie-parser');
 const path = require('path');
+const distPath = path.join(__dirname, '../dist');
 
 const client_id = '9f8e38fa4a4b4121a8108c36674f4a67'; // Your client id
 const client_secret = 'bc25b96167454fa79682074259f137c2'; // Your secret
@@ -25,9 +26,12 @@ const generateRandomString = (length) => {
 
 let stateKey = 'spotify_auth_state';
 
-app.use(express.static('dist'))
-  .use(cors())
-  .use(cookieParser());
+// MIKE: I ADDED THIS
+app.use(express.static(distPath));
+// app.use(express.static('dist'))
+//   .use(cors())
+//   .use(cookieParser());
+
 
 app.get('/login', (req, res) => {
   let state = generateRandomString(16);
@@ -125,6 +129,11 @@ app.get('/refresh_token', (req, res) => {
       });
     }
   });
+});
+
+// MIKE: I ADDED THIS
+app.get('/*', (req,res) =>{
+  res.sendFile(path.join(distPath, 'index.html'));
 });
 
 app.listen(port, () => console.log(`port: ${port}`));
