@@ -10,7 +10,7 @@ const path = require('path');
 
 const client_id = '9f8e38fa4a4b4121a8108c36674f4a67'; // Your client id
 const client_secret = 'bc25b96167454fa79682074259f137c2'; // Your secret
-const redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+const redirect_uri = 'http://localhost:8080/callback'; // Your redirect uri
 
 
 const generateRandomString = (length) => {
