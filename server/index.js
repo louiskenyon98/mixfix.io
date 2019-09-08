@@ -27,10 +27,10 @@ const generateRandomString = (length) => {
 let stateKey = 'spotify_auth_state';
 
 // MIKE: I ADDED THIS
-app.use(express.static(distPath));
+app.use(express.static(distPath))
 // app.use(express.static('dist'))
-//   .use(cors())
-//   .use(cookieParser());
+  .use(cors())
+  .use(cookieParser());
 
 
 app.get('/login', (req, res) => {
@@ -93,7 +93,7 @@ app.get('/callback', (req, res) => {
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect('/#' +
+        res.redirect('/loginSuccess/#' +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
