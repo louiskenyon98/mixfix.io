@@ -1,6 +1,7 @@
-const express = require("express"),
-  app = express(),
-  port = process.env.PORT || 8080;
+import express from 'express';
+
+const app = express();
+let port = process.env.PORT || 8080;
 
 const request = require('request'); // "Request" library
 const cors = require('cors');
@@ -9,9 +10,7 @@ const cookieParser = require('cookie-parser');
 const path = require('path');
 const distPath = path.join(__dirname, '../dist');
 
-const client_id = '9f8e38fa4a4b4121a8108c36674f4a67'; // Your client id
-const client_secret = 'bc25b96167454fa79682074259f137c2'; // Your secret
-const redirect_uri = 'http://localhost:8080/callback'; // Your redirect uri
+import {client_id, client_secret, redirect_uri} from './config/auth';
 
 
 const generateRandomString = (length) => {
@@ -113,7 +112,7 @@ app.get('/refresh_token', (req, res) => {
   const refresh_token = req.query.refresh_token;
   let authOptions = {
     url: 'https://accounts.spotify.com/api/token',
-    headers: { 'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) },
+    headers: {'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))},
     form: {
       grant_type: 'refresh_token',
       refresh_token: refresh_token
@@ -132,7 +131,7 @@ app.get('/refresh_token', (req, res) => {
 });
 
 // MIKE: I ADDED THIS
-app.get('/*', (req,res) =>{
+app.get('/*', (req, res) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });
 
