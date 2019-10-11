@@ -4,3 +4,4 @@
 /coverage
 /dist/
 /.gradle/
+/server/config/auth.js
