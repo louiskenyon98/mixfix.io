@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import LoginSuccess from './components/Login/LoginSuccess';
+import SpotifyLoginSuccess from './components/SpotifyLogin/SpotifyLoginSuccess';
 import Splash from './components/Splash/Splash';
 
 class App extends React.Component {
@@ -11,7 +11,7 @@ class App extends React.Component {
         <Splash/>
         <Router>
           <Switch>
-            <Route path={"/loginSuccess"} component={LoginSuccess}/>
+            <Route path={"/loginSuccess"} component={SpotifyLoginSuccess}/>
             <Route path={"/hello"} component={() => <div>hello world</div>}/>
           </Switch>
         </Router>

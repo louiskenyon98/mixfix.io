@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card, CardContent, CssBaseline, Typography} from '@material-ui/core';
-import Login from '../Login/Login';
+import Login from '../SpotifyLogin/SpotifyLogin';
 
 const Splash = () => {
   return (
