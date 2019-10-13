@@ -1,7 +1,6 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import TextInput from '../components/common/reduxFormFields/TextInput';
-import {TextField} from "@material-ui/core";
 
 export class LoginFormContainer extends React.Component {
   constructor(props) {
@@ -10,7 +9,7 @@ export class LoginFormContainer extends React.Component {
 
   render() {
     return (
-    <form onSubmit={this.props.handleSubmit}>
+    <form onSubmit={this.props.onSubmit}>
       <Field
         name="username"
         type="text"
