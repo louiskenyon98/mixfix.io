@@ -1,7 +1,6 @@
 import React from 'react';
 import {Card, CardContent, CssBaseline, Typography} from '@material-ui/core';
-import LoginFormContainer from '../../containers/LoginFormContainer';
-// import Login from '../SpotifyLogin/SpotifyLogin';
+import {LoginContainer} from "../../containers/LoginContainer";
 
 const Splash = () => {
   return (
@@ -12,8 +11,7 @@ const Splash = () => {
           <Typography>
             Welcome to mixfix.io
           </Typography>
-          {/*<Login/>*/}
-          <LoginFormContainer/>
+          <LoginContainer/>
         </CardContent>
       </Card>
     </React.Fragment>
