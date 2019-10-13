@@ -18,7 +18,6 @@ const TextInput = ({
   return (
     <TextField
       label={label}
-      className={this.props.classes.textField}
       error={touched && error}
       {...input}
       {...custom}
