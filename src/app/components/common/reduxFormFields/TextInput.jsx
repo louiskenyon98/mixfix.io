@@ -17,6 +17,8 @@ const TextInput = ({
 }) => {
   return (
     <TextField
+      variant="outlined"
+      fullWidth
       label={label}
       error={touched && !!error}
       {...input}
