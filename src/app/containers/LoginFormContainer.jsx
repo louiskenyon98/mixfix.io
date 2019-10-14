@@ -1,5 +1,6 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
+import {Button, Container, CssBaseline} from '@material-ui/core';
 import TextInput from '../components/common/reduxFormFields/TextInput';
 
 export class LoginFormContainer extends React.Component {
@@ -7,30 +8,54 @@ export class LoginFormContainer extends React.Component {
     super(props);
   }
 
+  onSubmit(formValues) {
+    console.log('formValues: ', formValues);
+  }
+
   render() {
     return (
-    <form onSubmit={this.props.onSubmit}>
-      <Field
-        name="username"
-        type="text"
-        component={TextInput}
-      />
-    </form>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline/>
+        <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
+          <Field
+            label="Username"
+            name="userName"
+            type="text"
+            component={TextInput}
+          />
+          <Field
+            label="Password"
+            name="password"
+            type="password"
+            component={TextInput}
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+          >
+            Sign In
+          </Button>
+        </form>
+      </Container>
     )
   }
 }
 
-const validate = (values) => {
+const validate = (formValues) => {
   const errors = {};
   const requiredFields = [
-    'username'
+    'userName',
+    'password'
   ];
-  for(let i = 0; i < requiredFields.length; i++) {
+  for (let i = 0; i < requiredFields.length; i++) {
     let field = requiredFields[i];
-    if(!values[field]) {
+    if (!formValues[field]) {
       errors[field] = 'Required'
     }
   }
+  console.log(errors);
   return errors;
 };
 
