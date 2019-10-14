@@ -5,23 +5,15 @@ import LoginFormContainer from "./LoginFormContainer";
 export class LoginContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleSubmit(formValues) {
-    event.preventDefault();
-    console.log(`Thanks for submitting your form values, they were: ${formValues}`)
   }
 
   render() {
     return (
       <React.Fragment>
-        <Typography variant="h2">
+        <Typography component="h1" variant="h5">
           Please log in
         </Typography>
-        <LoginFormContainer
-          onSubmit={this.handleSubmit}
-        />
+        <LoginFormContainer/>
       </React.Fragment>
     )
   }
