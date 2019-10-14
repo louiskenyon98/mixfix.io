@@ -6,6 +6,7 @@ import request from 'request';
 export const handleCallback = (req, res) => {
   let stateKey = 'spotify_auth_state';
   let code = req.query.code || null;
+  console.log('code: ', code);
   let state = req.query.state || null;
 
   let storedState = req.cookies ? req.cookies[stateKey] : null;

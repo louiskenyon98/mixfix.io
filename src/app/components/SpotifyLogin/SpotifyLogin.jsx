@@ -12,7 +12,7 @@ const styles = {
   }
 };
 
-class Login extends React.Component {
+class SpotifyLogin extends React.Component {
   render() {
     return (
       <React.Fragment>
@@ -30,4 +30,4 @@ class Login extends React.Component {
   }
 }
 
-export default withStyles(styles)(Login)
+export default withStyles(styles)(SpotifyLogin)

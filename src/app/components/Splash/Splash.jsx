@@ -1,19 +1,15 @@
 import React from 'react';
-import {Card, CardContent, CssBaseline, Typography} from '@material-ui/core';
-import Login from '../Login/Login';
+import {CssBaseline, Typography} from '@material-ui/core';
+import {LoginContainer} from '../../containers/LoginContainer';
 
 const Splash = () => {
   return (
     <React.Fragment>
       <CssBaseline/>
-      <Card>
-        <CardContent>
-          <Typography>
-            Welcome to mixfix.io
-          </Typography>
-          <Login/>
-        </CardContent>
-      </Card>
+      <Typography>
+        Welcome to mixfix.io
+      </Typography>
+      <LoginContainer/>
     </React.Fragment>
   )
 };

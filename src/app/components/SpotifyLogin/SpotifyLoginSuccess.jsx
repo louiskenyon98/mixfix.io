@@ -1,8 +1,8 @@
 import React from 'react';
 
-const LoginSuccess = () => {
+const SpotifyLoginSuccess = () => {
   return (
     <div>You have logged in to Spotify successfully</div>
   )
 };
-export default LoginSuccess;
+export default SpotifyLoginSuccess;
