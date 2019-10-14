@@ -18,7 +18,7 @@ const TextInput = ({
   return (
     <TextField
       label={label}
-      error={touched && error}
+      error={touched && !!error}
       {...input}
       {...custom}
     />
