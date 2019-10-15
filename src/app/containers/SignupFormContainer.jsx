@@ -1,29 +1,33 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
-import {Button, Container, CssBaseline, Typography} from '@material-ui/core';
+import {Button, Container, CssBaseline} from '@material-ui/core';
 import TextInput from '../components/common/reduxFormFields/TextInput';
 
-export class LoginFormContainer extends React.Component {
+
+export class SignupFormContainer extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   onSubmit(formValues) {
-    console.log('formValues: ', formValues);
+    console.log('signup formValues: ', formValues);
   }
 
   render() {
     return (
       <Container component="main" maxWidth="xs">
         <CssBaseline/>
-        <Typography component="h1" variant="h5">
-          Please log in
-        </Typography>
         <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
           <Field
-            label="Username"
-            name="userName"
+            label="Name"
+            name="name"
             type="text"
+            component={TextInput}
+          />
+          <Field
+            label="Email"
+            name="email"
+            type="email"
             component={TextInput}
           />
           <Field
@@ -49,12 +53,13 @@ export class LoginFormContainer extends React.Component {
 const validate = (formValues) => {
   const errors = {};
   const requiredFields = [
-    'userName',
+    'name',
+    'email',
     'password'
   ];
   for (let i = 0; i < requiredFields.length; i++) {
     let field = requiredFields[i];
-    if (!formValues[field]) {
+    if(!formValues[field]) {
       errors[field] = 'Required'
     }
   }
@@ -63,6 +68,6 @@ const validate = (formValues) => {
 };
 
 export default reduxForm({
-  form: 'loginForm',
+  form: 'signupForm',
   validate
-})(LoginFormContainer)
+})(SignupFormContainer)
