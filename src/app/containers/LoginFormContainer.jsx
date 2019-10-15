@@ -1,6 +1,6 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
-import {Button, Container, CssBaseline} from '@material-ui/core';
+import {Button, Container, CssBaseline, Typography} from '@material-ui/core';
 import TextInput from '../components/common/reduxFormFields/TextInput';
 
 export class LoginFormContainer extends React.Component {
@@ -16,6 +16,9 @@ export class LoginFormContainer extends React.Component {
     return (
       <Container component="main" maxWidth="xs">
         <CssBaseline/>
+        <Typography component="h1" variant="h5">
+          Please log in
+        </Typography>
         <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
           <Field
             label="Username"
