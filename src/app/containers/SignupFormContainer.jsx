@@ -4,7 +4,7 @@ import {Button, Container, CssBaseline} from '@material-ui/core';
 import TextInput from '../components/common/reduxFormFields/TextInput';
 
 
-export class SignupFormContainer extends React.Component {
+class SignupFormContainer extends React.Component {
   constructor(props) {
     super(props)
   }
