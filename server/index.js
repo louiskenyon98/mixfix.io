@@ -6,6 +6,8 @@ import loginRoute from './routes/login';
 import callbackRoute from './routes/callback';
 import refreshRoute from './routes/refreshToken';
 import rootRoute from './routes/root';
+import signUpRoute from './routes/signup';
+
 
 import {distPath} from './config/consts';
 
@@ -18,6 +20,8 @@ app.use(express.static(distPath))
   .use(loginRoute)
   .use(callbackRoute)
   .use(refreshRoute)
+  .use(signUpRoute)
+  //This must be at the bottom
   .use(rootRoute);
 
 app.listen(port, console.log('listening on ', port));
