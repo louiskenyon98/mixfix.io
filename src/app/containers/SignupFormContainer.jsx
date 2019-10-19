@@ -1,16 +1,20 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
+import {connect} from 'react-redux';
 import {Button, Container, CssBaseline} from '@material-ui/core';
 import TextInput from '../components/common/reduxFormFields/TextInput';
+import {createUser} from '../actions/authActions';
 
 
 class SignupFormContainer extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   onSubmit(formValues) {
-    console.log('signup formValues: ', formValues);
+    console.log('SIGN UP formValues: ', formValues);
+    this.props.createUser(formValues);
   }
 
   render() {
@@ -67,7 +71,9 @@ const validate = (formValues) => {
   return errors;
 };
 
-export default reduxForm({
+const wrappedForm = reduxForm({
   form: 'signupForm',
   validate
-})(SignupFormContainer)
+})(SignupFormContainer);
+
+export default connect(null, {createUser})(wrappedForm)
