@@ -1,6 +1,6 @@
 import querystring from 'querystring';
 import {client_id, redirect_uri} from '../config/auth';
-import {generateRandomString} from '../config/generateRandomString';
+import {generateRandomString} from '../util/generateRandomString';
 
 export const handleLogin = (req, res) => {
   let state = generateRandomString(16);

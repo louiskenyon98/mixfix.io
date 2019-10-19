@@ -1,6 +1,6 @@
 import React from 'react';
 import {CssBaseline, Typography} from '@material-ui/core';
-import {LoginContainer} from '../../containers/LoginContainer';
+import LoginFormContainer from '../../containers/LoginFormContainer';
 
 const Splash = () => {
   return (
@@ -9,7 +9,7 @@ const Splash = () => {
       <Typography>
         Welcome to mixfix.io
       </Typography>
-      <LoginContainer/>
+      <LoginFormContainer/>
     </React.Fragment>
   )
 };
