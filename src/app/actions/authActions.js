@@ -18,7 +18,18 @@ export const createUser = data => async dispatch => {
     console.log('form successfully submitted');
     console.log('response.data: ', response.data);
     window.location.href = response.data.redirect
-  } catch(error) {
+  } catch (error) {
     console.log('error with form submission', error)
+  }
+};
+
+export const login = data => async dispatch => {
+  console.log('login called');
+  const response = await axios.post('/login', data);
+  try {
+    window.location.href = response.data.redirect;
+  } catch (error) {
+    console.log('There was an error', error);
+    throw new Error(error);
   }
 };
