@@ -8,11 +8,12 @@ import TextInput from '../components/common/reduxFormFields/TextInput';
 class LoginFormContainer extends React.Component {
   constructor(props) {
     super(props);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   onSubmit(formValues) {
     console.log('formValues: ', formValues);
-    this.props.login(formValues)
+    this.props.login(formValues);
   }
 
   render() {
