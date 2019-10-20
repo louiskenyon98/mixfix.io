@@ -18,7 +18,3 @@ export const postLogin = (req, res, next) => {
   res.cookie('isLoggedIn', true);
   res.send({"redirect": "/"});
 };
-
-export const getLogin = (req, res) => {
-
-};

@@ -8,7 +8,7 @@ import spotifyLoginRoute from './routes/spotifyLogin';
 import callbackRoute from './routes/callback';
 import refreshRoute from './routes/refreshToken';
 import rootRoute from './routes/root';
-import signUpRoute from './routes/signup';
+import signUpRoute from './routes/auth';
 
 import {distPath} from './config/consts';
 import {mongoConnect} from './util/database';
