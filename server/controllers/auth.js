@@ -1,5 +1,5 @@
 import User from "../models/user";
-import {determineLoggedInState} from "../util/determineLoggedInState";
+import {determineLoggedInState} from '../util/determineLoggedInState';
 
 export const postSignup = (req, res, next) => {
 
@@ -16,4 +16,11 @@ export const postLogin = (req, res, next) => {
   res.setHeader('Cache-Control', 'private');
   res.cookie('isLoggedIn', true);
   res.send({"redirect": "/"});
+};
+
+export const getLogin = (req, res, next) => {
+  console.log(determineLoggedInState(req));
+
+  //Pass off to react-router
+  next();
 };
