@@ -5,3 +5,4 @@
 /dist/
 /.gradle/
 /server/config/auth.js
+/server/util/database.js

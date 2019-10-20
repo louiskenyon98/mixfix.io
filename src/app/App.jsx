@@ -1,20 +1,23 @@
 import React from 'react';
 import {ThemeProvider} from '@material-ui/styles';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+
 import SpotifyLoginSuccess from './components/SpotifyLogin/SpotifyLoginSuccess';
 import Splash from './components/Splash/Splash';
 import {theme} from "./theme";
+import SignupFormContainer from "./containers/SignupFormContainer";
+import {PrivateRoute} from "./components/common/PrivateRoute";
 
 class App extends React.Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        {/*<Login/>*/}
-        <Splash/>
         <Router>
           <Switch>
+            <Route exact path={"/"} component={Splash}/>
             <Route path={"/loginSuccess"} component={SpotifyLoginSuccess}/>
-            <Route path={"/hello"} component={() => <div>hello world</div>}/>
+            <PrivateRoute path={"/hello"} component={() => <div>This is a private hello world page</div>}/>
+            <Route path={"/signup"} component={SignupFormContainer}/>
           </Switch>
         </Router>
       </ThemeProvider>
