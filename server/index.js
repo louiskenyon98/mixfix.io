@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
+import session from 'express-session';
 
 import loginRoute from './routes/login';
 import callbackRoute from './routes/callback';
@@ -20,6 +21,7 @@ app.use(express.static(distPath))
   .use(cookieParser())
   .use(bodyParser.urlencoded({extended: true}))
   .use(bodyParser.json())
+  .use(session({secret: 'mySecretHere', resave: false, saveUninitialized: false}))
   .use(loginRoute)
   .use(callbackRoute)
   .use(refreshRoute)
