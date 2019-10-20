@@ -10,14 +10,11 @@ class User {
   }
   save() {
     const db = getDb();
-    return db.collection('users').insert(this);
+    return db.collection('users').insertOne(this);
   }
   static findById(userId) {
     const db = getDb();
-    return db
-      .collection('users')
-      .find({_id: new ObjectId(userId)})
-      .next();
+    return db.collection('users').findOne({_id: new ObjectId(userId)});
   }
 }
 
