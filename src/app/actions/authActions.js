@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 export const signIn = () => {
   return {
     type: 'SIGN_IN'
@@ -14,5 +13,12 @@ export const signOut = () => {
 
 export const createUser = data => async dispatch => {
   console.log('createUser action called');
-  axios.post('/signup', data);
+  const response = await axios.post('/signup', data);
+  try {
+    console.log('form successfully submitted');
+    console.log('response.data: ', response.data);
+    window.location.href = response.data.redirect
+  } catch(error) {
+    console.log('error with form submission', error)
+  }
 };
