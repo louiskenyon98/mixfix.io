@@ -1,5 +1,7 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
+import {connect} from 'react-redux';
+import {login} from '../actions/authActions';
 import {Button, Container, CssBaseline, Typography} from '@material-ui/core';
 import TextInput from '../components/common/reduxFormFields/TextInput';
 
@@ -10,6 +12,7 @@ export class LoginFormContainer extends React.Component {
 
   onSubmit(formValues) {
     console.log('formValues: ', formValues);
+    this.props.login(formValues)
   }
 
   render() {
@@ -62,7 +65,9 @@ const validate = (formValues) => {
   return errors;
 };
 
-export default reduxForm({
+const wrappedForm =  reduxForm({
   form: 'loginForm',
   validate
-})(LoginFormContainer)
+})(LoginFormContainer);
+
+export default connect(null, {login})(wrappedForm);
