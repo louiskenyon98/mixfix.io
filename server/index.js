@@ -9,8 +9,8 @@ import refreshRoute from './routes/refreshToken';
 import rootRoute from './routes/root';
 import signUpRoute from './routes/signup';
 
-
 import {distPath} from './config/consts';
+import {mongoConnect} from "./util/database";
 
 const app = express();
 let port = process.env.PORT || 8080;
@@ -27,4 +27,7 @@ app.use(express.static(distPath))
   //This must be at the bottom
   .use(rootRoute);
 
-app.listen(port, console.log('listening on ', port));
+mongoConnect(() => {
+  app.listen(port, console.log('listening on ', port));
+});
+
