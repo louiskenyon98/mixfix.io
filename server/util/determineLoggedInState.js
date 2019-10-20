@@ -1,3 +1,6 @@
 export const determineLoggedInState = (req) => {
-  return req.get('Cookie').split('=')[1]
+  if (req.get('Cookie')) {
+    return req.get('Cookie').split('=')[1]
+  }
+  return false;
 };
