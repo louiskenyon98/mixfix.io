@@ -5,7 +5,7 @@ import {login} from '../actions/authActions';
 import {Button, Container, CssBaseline, Typography} from '@material-ui/core';
 import TextInput from '../components/common/reduxFormFields/TextInput';
 
-export class LoginFormContainer extends React.Component {
+class LoginFormContainer extends React.Component {
   constructor(props) {
     super(props);
   }
