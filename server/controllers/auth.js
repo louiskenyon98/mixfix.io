@@ -13,7 +13,6 @@ export const postLogin = (req, res, next) => {
   const email = req.body.email;
   const password = req.body.password;
   req.isLoggedIn = true;
-  console.log(req);
   res.setHeader('Cache-Control', 'private');
   res.cookie('isLoggedIn', true);
   res.send({"redirect": "/"});
