@@ -28,6 +28,9 @@ const NavBar = (props) => {
             News
           </Typography>
           <Button component={Link} to="/login" color="inherit">Login</Button>
+          <form action="/logout" method="post">
+            <Button color="inherit">Logout</Button>
+          </form>
         </Toolbar>
       </AppBar>
     </div>
