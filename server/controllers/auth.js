@@ -1,5 +1,4 @@
 import User from "../models/user";
-import {determineLoggedInState} from '../util/determineLoggedInState';
 
 export const postSignup = (req, res, next) => {
 
@@ -26,8 +25,6 @@ export const postLogin = async (req, res, next) => {
 };
 
 export const getLogin = (req, res, next) => {
-  res.setHeader('Cache-Control', 'private');
-  res.cookie('isLoggedIn', false);
   console.log('session:', req.session.isLoggedIn);
   console.log('user:', req.session.user);
 
