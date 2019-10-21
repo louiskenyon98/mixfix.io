@@ -7,12 +7,14 @@ import Splash from './components/Splash/Splash';
 import {theme} from './theme';
 import SignupFormContainer from './containers/SignupFormContainer';
 import LoginFormContainer from './containers/LoginFormContainer';
+import NavBar from "./components/common/NavBar";
 
 class App extends React.Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
         <Router>
+          <NavBar/>
           <Switch>
             <Route exact path={"/"} component={Splash}/>
             <Route exact path={"/login"} component={LoginFormContainer}/>
