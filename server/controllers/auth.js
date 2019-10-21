@@ -9,7 +9,7 @@ export const getSignup = (req, res, next) => {
 };
 
 export const postLogin = async (req, res, next) => {
-  const email = req.body.email;
+  const userName = req.body.userName;
   const password = req.body.password;
   // res.setHeader('Cache-Control', 'private');
   // res.cookie('isLoggedIn', true);
@@ -30,6 +30,12 @@ export const getLogin = (req, res, next) => {
 
   //Pass off to react-router
   next();
+};
+
+export const postLogout = (req, res, next) => {
+  req.session.destroy(() => {
+
+  });
 };
 
 export const getPrivate = (req, res, next) => {
