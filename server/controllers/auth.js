@@ -34,3 +34,12 @@ export const getLogin = (req, res, next) => {
   //Pass off to react-router
   next();
 };
+
+export const getPrivate = (req, res, next) => {
+  console.log('user:', req.session.user);
+  if (req.session.isLoggedIn === true) {
+    next();
+  } else {
+    res.redirect('/login')
+  }
+};
