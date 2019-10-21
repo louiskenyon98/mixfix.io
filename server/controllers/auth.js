@@ -5,8 +5,8 @@ export const postSignup = (req, res, next) => {
 
 };
 
-export const getSignup = (req, res) => {
-  res.redirect('/signupform')
+export const getSignup = (req, res, next) => {
+  next();
 };
 
 export const postLogin = async (req, res, next) => {
